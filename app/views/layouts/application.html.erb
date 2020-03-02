@@ -10,6 +10,12 @@
   </head>
 
   <body>
+    <header>
+      <%= link_to 'TOP', :root %>
+      <%= "Logging in as #{account.name}" if account %>
+      <%= link_to 'log out', "/sessions/#{account.id}", method: :delete if account %>
+    </header>
+    <p><%= flash.notice %></p>
     <%= yield %>
   </body>
 </html>
